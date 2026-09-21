@@ -32,7 +32,8 @@ with ZipFile(kit, 'w', ZIP_DEFLATED) as archive:
         'SUBMISSION.md has the copy-ready fields and remaining requirements.\n'
         'The source-tree paths in the guide refer to the GitHub repository;\n'
         'the supplied images are in assets/ in this kit.\n'
-        'An actual screenshot using a clean sample document is still needed.\n'
+        'A real light-appearance comparison screenshot is in assets/.\n'
+        'The primary dark screenshot is pending manual selection of Dark.\n'
         'Promotional artwork is not a substitute for a product screenshot.\n'
     ))
 

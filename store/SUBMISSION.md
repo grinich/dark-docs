@@ -1,8 +1,8 @@
 # Chrome Web Store submission — Dark Docs 1.2.0
 
-Prepared September 21, 2026. The upload package is `dist/dark-docs-1.2.0.zip`. Upload the ZIP directly; no CRX or private signing key is needed for this submission flow. Chrome's documented upload path is **Add new item → Choose file → Upload**. [Upload guide](https://developer.chrome.com/docs/webstore/publish)
+Prepared September 21, 2026. The upload package is `dist/dark-docs-1.2.0.zip`. Upload the ZIP directly; no CRX or private signing key is needed for this submission flow. An existing draft store item has ID `lddfoalljgifdgnoomiokmpgdnmejoml`; continue that item in the dashboard rather than creating another. It is not a published listing. [Upload guide](https://developer.chrome.com/docs/webstore/publish)
 
-The ZIP is packaged and validated. The listing still needs an actual screenshot made with a clean demo document, a publicly reachable privacy-policy URL, and the final live QA noted in `TESTING.md`. Preparing this kit does not submit or publish the extension.
+The ZIP is packaged and validated. The [repository](https://github.com/grinich/dark-docs) is public, and the [privacy policy](https://github.com/grinich/dark-docs/blob/main/PRIVACY.md) was confirmed readable while signed out. A genuine light-appearance comparison screenshot is supplied; the primary dark screenshot is pending selection of Dark in the native extension popup. Final live QA remains as noted in `TESTING.md`. Preparing this kit does not submit or publish the extension.
 
 ## Listing fields
 
@@ -11,14 +11,15 @@ The ZIP is packaged and validated. The listing still needs an actual screenshot 
 | Name | Dark Docs |
 | Short description (from manifest) | A quiet charcoal theme for Google Docs. Follows your computer’s appearance automatically. |
 | Version | 1.2.0 |
+| Existing draft item ID | `lddfoalljgifdgnoomiokmpgdnmejoml` — not yet published |
 | Item type | Extension |
 | Category | Accessibility — Google's category guidance explicitly includes dark-mode extensions |
 | Language | English |
 | Price | Free |
 | Mature content | No |
-| Homepage | `https://github.com/grinich/dark-docs` — only use publicly if the repository is public |
-| Support | `https://github.com/grinich/dark-docs/issues` — only use publicly if the repository is public; otherwise use the store's support contact |
-| Privacy policy | `https://github.com/grinich/dark-docs/blob/main/PRIVACY.md` if public; otherwise host the supplied `PRIVACY.md` on a public page you control |
+| Homepage | `https://github.com/grinich/dark-docs` |
+| Support | `https://github.com/grinich/dark-docs/issues` |
+| Privacy policy | `https://github.com/grinich/dark-docs/blob/main/PRIVACY.md` — verified accessible without signing in |
 
 Use **Extension**, even though it applies a theme to Docs. It is not a Chrome browser-theme package. [Category guidance](https://developer.chrome.com/docs/webstore/best-practices)
 
@@ -90,26 +91,26 @@ Google requires a 128×128 PNG icon, a 440×280 promotional tile, and at least o
 | 128×128 icon | `extension/icons/128.png` (also included in the upload ZIP) |
 | 440×280 promotional tile | `store/assets/promo-small.png` |
 | 1400×560 optional marquee | `store/assets/promo-marquee.png` |
-| Actual screenshot | Still needed: a real Docs screenshot using non-sensitive sample text |
+| Actual light comparison screenshot | `store/assets/screenshot-light-1280x800.jpg` — clean sample document, no account header |
+| Primary dark screenshot | Capture the same demo after Dark is selected in the extension popup |
 
 Suggested screenshots: (1) full editor with title and outline, (2) comments or a menu open, (3) popup showing the appearance controls. Capture after the final live QA. Avoid visible account names, emails, collaborator lists, private document titles, or document IDs. The promotional artwork is not a substitute for the required actual screenshot.
 
 ## Submission steps
 
-1. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole). Register if needed and pay the one-time fee displayed there. Choose the publisher account carefully; Google's registration guide says its email cannot simply be changed later. [Registration](https://developer.chrome.com/docs/webstore/register)
+1. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole) in the owner's publisher account and select existing draft item `lddfoalljgifdgnoomiokmpgdnmejoml`. Do not create a duplicate item.
 2. Set the publisher name and verified contact email. Enable Google account 2-Step Verification and complete any identity or trader-status questions the dashboard presents using your actual circumstances. [Account setup](https://developer.chrome.com/docs/webstore/set-up-account), [account protection requirement](https://developer.chrome.com/docs/webstore/program-policies/policies)
-3. Upload `dark-docs-1.2.0.zip` as a new item. Save its assigned item ID.
+3. Check the existing draft item's Package tab for version 1.2.0. Upload `dark-docs-1.2.0.zip` there if it has not already been uploaded. If the extension code changed since that version was uploaded, increment the version and upload a new package to this same item.
 4. Complete Store listing using the fields and description above. Upload the icon, tile, and clean screenshot.
-5. Complete Privacy using the matching disclosures above and a public privacy-policy URL. Open the URL while signed out to check that reviewers can read it.
+5. Complete Privacy using the matching disclosures above and `https://github.com/grinich/dark-docs/blob/main/PRIVACY.md`. This URL has been verified while signed out; recheck it if repository visibility or the policy location changes.
 6. Add the reviewer instructions. Choose distribution: Public for a searchable listing, Unlisted for anyone with its link, or Private for designated testers. All choices still require review. For an initial personal rollout, Unlisted is a reasonable choice. Select the intended regions. [Distribution options](https://developer.chrome.com/docs/webstore/cws-dashboard-distribution)
 7. Finish the remaining live QA before submitting. Choose deferred publishing if you want to approve the launch after review; staged approval currently expires after 30 days. [Submission and deferred publishing](https://developer.chrome.com/docs/webstore/publish)
 
 ## Decisions still needed from the owner
 
-- Repository visibility. A private repository's README, issues, and privacy file cannot serve as public listing URLs.
 - Publisher display name and public support email; enter them directly in the dashboard.
 - Store visibility and regions; truthful account/trader declarations, if requested.
-- A disposable sample document for clean screenshots and final live checks, with Dark selected in the popup for the browser testing session.
+- Keep Dark selected in the popup for the remaining browser-controlled visual checks. The clean demo screenshot is being prepared separately from the private work document.
 - An open-source license only if you want to grant reuse rights. None has been assumed.
 
 For ongoing development, use `DEVELOPMENT.md`; no application secrets are needed.

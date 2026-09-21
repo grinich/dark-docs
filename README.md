@@ -35,12 +35,13 @@ The extension uses modern CSS nesting and targets Chrome 120 or later.
 
 ## Submission and maintenance
 
+- [Public source repository](https://github.com/grinich/dark-docs).
 - [Download packaged builds](https://github.com/grinich/dark-docs/releases).
 - [Chrome Web Store submission guide](store/SUBMISSION.md): ready-to-paste listing copy, privacy declarations, reviewer instructions, and image requirements.
-- [Privacy policy](PRIVACY.md).
+- [Public privacy policy](https://github.com/grinich/dark-docs/blob/main/PRIVACY.md), readable without signing in.
 - [Development handoff](DEVELOPMENT.md): local setup, remaining QA, and release steps.
 - [Verification record](TESTING.md): checks completed and their limits.
 
-Version 1.2.0 is a submission candidate, not a published Chrome Web Store release. The package is validated; a clean product screenshot and the remaining live checks are still needed before submission. A private repository's links cannot serve as public store listing URLs.
+Version 1.2.0 is a submission candidate, not a published Chrome Web Store release. The existing draft store item is `lddfoalljgifdgnoomiokmpgdnmejoml`. The package, public privacy-policy URL, and a clean light-appearance comparison screenshot are ready; the primary dark screenshot and remaining live checks are still pending.
 
 Run `npm run submission` to build both the extension ZIP and a separate submission-kit ZIP containing the guide, privacy policy, and promotional artwork. Upload only the extension ZIP to the store.
