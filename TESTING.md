@@ -1,6 +1,13 @@
-# Verification — Dark Docs 1.2.0
+# Verification — Dark Docs 1.2.1
 
-## Live Chrome checks
+## Pageless regression fixed in 1.2.1
+
+- Reproduced the user-reported black-text-on-dark-background bug in the actual pageless demo. Its transparent canvas tiles live outside the paginated page wrappers.
+- Added a filter to the pageless document paint layer only and made the pageless background override conditional on dark document pages. Original mode preserves Google’s inline document background, including custom colors.
+- Added ten browser regression checks using transparent canvas pixels and the observed pageless hierarchy. All 37 fixture checks pass; paged and pageless samples were also visually inspected. The 18 behavior tests still pass.
+- Final verification of 1.2.1 in the installed Chrome extension is pending a manual extension reload. The real dark store screenshot must wait until that check passes.
+
+## Live Chrome checks before this patch
 
 The unpacked extension was exercised against the user's Google Docs document. The user confirmed reloading the extension manually.
 
@@ -19,9 +26,9 @@ The unpacked extension was exercised against the user's Google Docs document. Th
 ## Automated checks and package audit
 
 - `npm test`: all 18 tests passed for appearance changes, saved preferences, startup races, popup write ordering/error feedback, and manifest/file references.
-- All 27 checks in `tests/theme-fixture.html` passed against the current stylesheet in the in-app Chromium browser. Tooltip contrast measured 9.83:1; link-preview contrast measured 10.28:1. These representative fixtures supplement, but do not replace, live Google Docs checks.
+- All 37 checks in `tests/theme-fixture.html` passed against the current stylesheet in the in-app Chromium browser. Tooltip contrast measured 9.83:1; link-preview contrast measured 10.28:1. These representative fixtures supplement, but do not replace, live Google Docs checks.
 - JavaScript syntax checks passed for the content script, popup, and fixture script.
-- `dist/dark-docs-1.2.0.zip` passed its integrity check and matched every file in `extension/` at the time of this audit, with no missing or extra files. Rebuild after any further source changes.
+- `dist/dark-docs-1.2.1.zip` passed its integrity check and matched every file in `extension/` at the time of this audit, with no missing or extra files. Rebuild after any further source changes.
 - Manifest and package versions agree. Permissions remain limited to `storage`; content-script URLs remain on `docs.google.com`.
 
 ## Remaining checks and limits

@@ -3,6 +3,22 @@ window.addEventListener('load', () => {
   const root = document.documentElement;
   const value = (selector, property) => getComputedStyle(document.querySelector(selector))[property];
   const check = (name, actual, expected) => results.push(`${actual === expected ? 'PASS' : 'FAIL'} ${name}: ${actual}`);
+  const filtersOn = selector => {
+    const filters = [];
+    for (let element = document.querySelector(selector); element; element = element.parentElement) {
+      const filter = getComputedStyle(element).filter;
+      if (filter !== 'none') filters.push(filter);
+    }
+    return filters;
+  };
+  for (const id of ['paged-canvas', 'pageless-canvas']) {
+    const context = document.getElementById(id).getContext('2d');
+    // Drawing leaves the canvas transparent, just like the observed pageless
+    // tiles. Changing an inherited CSS text color cannot recolor these pixels.
+    context.fillStyle = '#111';
+    context.font = '20px Arial';
+    context.fillText('Readable document text on transparent canvas', 0, 32);
+  }
   const rgb = color => color.match(/[\d.]+/g).slice(0, 3).map(Number);
   const luminance = color => rgb(color).map(channel => {
     const normalized = channel / 255;
@@ -21,6 +37,7 @@ window.addEventListener('load', () => {
   check('title shadow removed', value('.docs-title-input', 'textShadow'), 'none');
   check('title only paints once', value('.docs-title-input', 'color'), 'rgba(0, 0, 0, 0)');
   check('dark document paper', value('.kix-page', 'filter').startsWith('invert(1)'), true);
+  check('paged canvas is filtered exactly once', filtersOn('#paged-canvas').length, 1);
   check('comments header', value('.docs-docos-activity-sidebar-header', 'backgroundColor'), 'rgb(39, 39, 39)');
   check('comments empty state', value('.docos-streampane-zero-state', 'backgroundColor'), 'rgb(39, 39, 39)');
   check('comments empty-state text', value('.docos-streampane-zero-state-content-add-comment', 'color'), 'rgb(227, 227, 227)');
@@ -45,5 +62,24 @@ window.addEventListener('load', () => {
   check('light mode restores tooltip surface', value('#toolbar-tooltip', 'backgroundColor'), 'rgb(255, 255, 255)');
   check('light mode restores tooltip text', value('.scb-tooltip-title', 'color'), 'rgb(32, 33, 36)');
   root.dataset.darkDocs = 'dark';
+
+  // Exercise the separate pageless hierarchy and the native inline background.
+  document.body.classList.add('docs-body-pageless');
+  const pagelessEditor = document.getElementById('pageless-editor');
+  check('pageless paper surface is dark', luminance(value('#pageless-editor', 'backgroundColor')) < 0.1, true);
+  check('pageless canvas is filtered exactly once', filtersOn('#pageless-canvas').length, 1);
+  check('pageless canvas text is inverted', filtersOn('#pageless-canvas')[0]?.startsWith('invert(1)'), true);
+  root.dataset.darkDocsPaper = 'original';
+  check('original pageless canvas has no inherited filter', filtersOn('#pageless-canvas').length, 0);
+  check('original pageless paper restores native white', value('#pageless-editor', 'backgroundColor'), 'rgb(255, 255, 255)');
+  pagelessEditor.style.backgroundColor = 'rgb(255, 248, 225)';
+  check('original pageless paper respects custom native color', value('#pageless-editor', 'backgroundColor'), 'rgb(255, 248, 225)');
+  root.dataset.darkDocsPaper = 'dark';
+  root.dataset.darkDocs = 'light';
+  check('light mode removes pageless inherited filter', filtersOn('#pageless-canvas').length, 0);
+  check('light mode respects custom native pageless color', value('#pageless-editor', 'backgroundColor'), 'rgb(255, 248, 225)');
+  root.dataset.darkDocs = 'dark';
+  check('returning to dark filters pageless canvas once', filtersOn('#pageless-canvas').length, 1);
+  pagelessEditor.style.backgroundColor = 'rgb(255, 255, 255)';
   document.querySelector('#results').textContent = results.join('\n');
 });

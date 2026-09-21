@@ -1,7 +1,7 @@
 {
   "name": "dark-docs",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "test": "node --test tests/*.test.cjs",
     "package": "python3 scripts/package.py",

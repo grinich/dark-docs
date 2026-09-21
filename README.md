@@ -29,7 +29,7 @@ Google may change its editor markup over time; `extension/theme.css` contains th
 
 Edit the files in `extension/`. Click the reload icon on Dark Docs in `chrome://extensions`, then refresh Google Docs to test an updated build.
 
-Run `npm test` for settings, system appearance, startup race, and package validation. Run `npm run package` to create `dist/dark-docs-1.2.0.zip`; unzip it before using Load unpacked on another computer.
+Run `npm test` for settings, system appearance, startup race, and package validation. Run `npm run package` to create `dist/dark-docs-1.2.1.zip`; unzip it before using Load unpacked on another computer.
 
 The extension uses modern CSS nesting and targets Chrome 120 or later.
 
@@ -42,6 +42,6 @@ The extension uses modern CSS nesting and targets Chrome 120 or later.
 - [Development handoff](DEVELOPMENT.md): local setup, remaining QA, and release steps.
 - [Verification record](TESTING.md): checks completed and their limits.
 
-Version 1.2.0 is a submission candidate, not a published Chrome Web Store release. The existing draft store item is `lddfoalljgifdgnoomiokmpgdnmejoml`. The package, public privacy-policy URL, and a clean light-appearance comparison screenshot are ready; the primary dark screenshot and remaining live checks are still pending.
+Version 1.2.1 is a submission candidate, not a published Chrome Web Store release. The existing draft store item is `lddfoalljgifdgnoomiokmpgdnmejoml`. The package, public privacy-policy URL, and a clean light-appearance comparison screenshot are ready; the primary dark screenshot and remaining live checks are still pending.
 
 Run `npm run submission` to build both the extension ZIP and a separate submission-kit ZIP containing the guide, privacy policy, and promotional artwork. Upload only the extension ZIP to the store.

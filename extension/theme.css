@@ -42,10 +42,17 @@
     body, #docs-chrome, #docs-header, .docs-titlebar,
     .docs-titlebar-buttons, #docs-editor-container,
     .docs-material, .docs-gm, .docs-grille-gm3,
-    .kix-appview-editor, .kix-appview-editor-container,
-    .kix-appview-editor-container > div, .kix-paginateddocumentplugin,
+    .kix-appview-editor-container, .kix-paginateddocumentplugin,
     .docs-horizontal-ruler, .docs-ruler-background, .docs-ruler-mask,
     .docs-full-height-sidebar-placeholder, .docs-companion-app-switcher-container {
+      background-color: var(--dd-workspace) !important;
+      color: var(--dd-text) !important;
+    }
+
+    /* In pageless mode the editor's inline background is the document's
+       own color. Preserve it unless dark document pages are enabled. */
+    body:not(.docs-body-pageless) .kix-appview-editor,
+    body:not(.docs-body-pageless) .kix-appview-editor-container > div {
       background-color: var(--dd-workspace) !important;
       color: var(--dd-text) !important;
     }
@@ -210,8 +217,15 @@
        Black text becomes #e0e0e0, white paper #2d2d2d. Color hues stay recognizable,
        but aren't color-accurate; the popup's original-page option removes this. */
     &[data-dark-docs-paper="dark"] .kix-page,
-    &[data-dark-docs-paper="dark"] .kix-page-paginated {
+    &[data-dark-docs-paper="dark"] .kix-page-paginated,
+    &[data-dark-docs-paper="dark"] .docs-body-pageless .kix-rotatingtilemanager-content {
       filter: invert(1) hue-rotate(180deg) contrast(.7) brightness(1.1) !important;
+    }
+    /* Pageless tiles have transparent backgrounds and no .kix-page wrapper.
+       Transform only their paint layer; leave cursors, comments and controls
+       outside the filter, and restore Google's inline color in original mode. */
+    &[data-dark-docs-paper="dark"] .docs-body-pageless .kix-appview-editor {
+      background-color: #2d2d2d !important;
     }
     &[data-dark-docs-paper="dark"] .kix-cursor-caret { border-color: #ededed !important; }
 

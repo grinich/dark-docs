@@ -32,9 +32,9 @@ The existing Chrome Web Store draft item ID is `lddfoalljgifdgnoomiokmpgdnmejoml
 5. To run the fixture, start `python3 -m http.server 8766 --bind 127.0.0.1` from the repository and open `http://127.0.0.1:8766/tests/theme-fixture.html`. The page reports the checks. Stop the server when finished.
 6. Update `TESTING.md` with observed results and remaining limits.
 
-## Open QA work for 1.2.0
+## Open QA work for 1.2.1
 
-The editor and many live dialogs have been exercised, and 18 behavior tests plus 27 browser fixture checks pass. The final dark-mode visual checks still include Styles previews, custom color-picker endpoints, the sharing backdrop, Keep, and disabled buttons. Check popup preference persistence and the paper toggle in native Chrome. Native print preview remains unverified; exported PDF appearance was checked separately. `TESTING.md` is the detailed evidence record.
+The editor and many live dialogs have been exercised, and 18 behavior tests plus 37 browser fixture checks pass. The final dark-mode visual checks still include Styles previews, custom color-picker endpoints, the sharing backdrop, Keep, and disabled buttons. Check popup preference persistence and the paper toggle in native Chrome. Native print preview remains unverified; exported PDF appearance was checked separately. `TESTING.md` is the detailed evidence record.
 
 Also check companion apps when the operating system itself is dark. Their whole-frame transform assumes a light embedded interface; an app introducing its own dark theme may need different treatment. Other companion apps and third-party add-ons have not received comprehensive visual testing.
 

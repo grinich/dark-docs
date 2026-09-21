@@ -8,13 +8,17 @@ body { font:14px Arial; background:#fff; color:#111; margin:24px; }
 
 .docs-docos-activity-sidebar-header,.docos-streampane-zero-state{background:#f0f4f9;color:#111;padding:20px}.docos-streampane-tabbar .docs-tabbar-tab{display:inline-block;padding:8px;color:#111;background:#d3e3fd}.chapter-item-label-and-buttons-container-selected{background:#d3e3fd;color:#0b57d0;padding:12px}.docs-material-button-fill-primary{background:#0b57d0;color:white;padding:10px;border:0}
 .jfk-tooltip,.docs-chat-message-tooltip-container{display:inline-block;background:#fff;color:#202124;border:1px solid #dadce0;border-radius:4px;padding:10px;margin:12px 12px 0 0}.scb-tooltip-title{color:#202124;font-weight:bold}.scb-tooltip-text,.docs-chat-message-tooltip-content{color:#5f6368}.docs-linkbubble-bubble{background:#fff;color:#202124;padding:14px;margin-top:12px}.docs-link-bubble-text-card-component span{color:#202124}.docs-bubble-link{color:#1a73e8}
+#pageless-editor{padding:24px;margin:20px 0}canvas.kix-canvas-tile-content{display:block;max-width:100%}
 </style>
 <link rel="stylesheet" href="../extension/theme.css">
 <body>
 <div class="docs-titlebar"><span class="docs-title-input-label">A quieter place to write</span><input class="docs-title-input" aria-label="Rename" value="A quieter place to write" style="left:0;top:0"></div>
 <div class="docs-menubar"><span class="menu-button">File</span> &nbsp; <span class="menu-button">Edit</span> &nbsp; <span class="menu-button">View</span></div>
 <div id="docs-toolbar" class="goog-toolbar"><div class="goog-toolbar-button">Undo</div><div class="goog-toolbar-button goog-toolbar-button-checked">B</div></div>
-<div class="kix-page">Document paper and text</div>
+<div class="kix-page kix-page-paginated">Document paper and text<canvas id="paged-canvas" class="kix-canvas-tile-content" width="640" height="64" aria-label="Paged sample document text"></canvas></div>
+<!-- Pageless document tiles have no kix-page ancestor. Their native paper
+     background is inline on the editor, outside the transparent canvas. -->
+<div class="kix-appview-editor-container"><div id="pageless-editor" class="kix-appview-editor" style="background-color:rgb(255,255,255)"><div><div class="kix-rotatingtilemanager docs-ui-hit-region-surface"><div class="kix-rotatingtilemanager-content"><div><canvas id="pageless-canvas" class="kix-canvas-tile-content" width="640" height="100" aria-label="Pageless sample document text"></canvas></div></div></div></div></div></div>
 <div class="goog-menu"><div class="goog-menuitem-content">New <span class="goog-submenu-arrow">›</span></div><div class="goog-menuitem-content goog-menuitem-highlight">Open <span class="goog-menuitem-accel">⌘O</span></div></div>
 <div class="chapter-item-label-and-buttons-container chapter-item-label-and-buttons-container-selected"><span class="chapter-label-content">Tab 1</span></div>
 <section class="docos-comments-pe docs-docos-activity-sidebar"><header class="docs-docos-activity-sidebar-header"><span class="docs-docos-activity-sidebar-header-title">Comments</span><div class="docos-streampane-tabbar"><div class="docs-tabbar-tab docs-tabbar-tab-selected"><span class="docs-tabbar-tablabel">All comments</span></div><div class="docs-tabbar-tab"><span class="docs-tabbar-tablabel">For you</span></div></div></header><div class="docos-streampane-zero-state"><p class="docos-streampane-zero-state-content-add-comment">Start a discussion</p><button class="docs-material-button-fill-primary">Add comment</button><p class="docos-streampane-zero-state-footer-edu">Who sees comments?</p></div></section>

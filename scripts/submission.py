@@ -33,7 +33,7 @@ with ZipFile(kit, 'w', ZIP_DEFLATED) as archive:
         'The source-tree paths in the guide refer to the GitHub repository;\n'
         'the supplied images are in assets/ in this kit.\n'
         'A real light-appearance comparison screenshot is in assets/.\n'
-        'The primary dark screenshot is pending manual selection of Dark.\n'
+        'The primary dark screenshot is pending the fixed extension reload and live check.\n'
         'Promotional artwork is not a substitute for a product screenshot.\n'
     ))
 
