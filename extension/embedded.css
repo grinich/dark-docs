@@ -1,0 +1,39 @@
+/* Google's sharing interface lives in its own document. Keep its native
+   layout and interaction states while adapting the rendered colors. */
+@media screen {
+  html[data-dark-docs="dark"] {
+    color-scheme: light !important;
+    /* The root canvas is not filtered like the rendered frame content. */
+    background-color: #272727 !important;
+    /* White becomes #272727; black becomes #f1f1f1. */
+    filter: invert(1) hue-rotate(180deg) contrast(.72) brightness(1.1) !important;
+  }
+  html[data-dark-docs="dark"] body {
+    background-color: #fff !important;
+    min-height: 100vh;
+  }
+
+  /* Counter the frame transform on avatars and image previews. Inverse
+     contrast preserves midtones; extremes share the frame's soft limits. */
+  html[data-dark-docs="dark"] :is(img, video, canvas),
+  html[data-dark-docs="dark"] [style*="background-image"][style*="googleusercontent.com"] {
+    filter: brightness(.909090909) contrast(1.388888889) hue-rotate(180deg) invert(1) !important;
+  }
+
+  /* These observed sharing-dialog button classes use Material's native
+     state layers. Neutral source colors become gray actions after filtering. */
+  html[data-dark-docs="dark"] button.UywwFc-LgbsSe:not(:disabled):not([aria-disabled="true"]) {
+    background-color: #181818 !important;
+    border-color: #181818 !important;
+    color: #fff !important;
+  }
+  html[data-dark-docs="dark"] :is(button.mUIrbf-LgbsSe, button.AeBiU-LgbsSe):not(:disabled):not([aria-disabled="true"]) {
+    color: #303030 !important;
+  }
+  html[data-dark-docs="dark"] button.AeBiU-LgbsSe:not(:disabled):not([aria-disabled="true"]) {
+    border-color: #797979 !important;
+  }
+  html[data-dark-docs="dark"] a {
+    color: #343434 !important;
+  }
+}

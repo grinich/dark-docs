@@ -1,0 +1,408 @@
+/* Dark Docs — presentation only. All rules are screen-only so print keeps original colors. */
+@media screen {
+  :root[data-dark-docs="dark"] {
+    color-scheme: dark;
+    --dd-workspace: #202020;
+    --dd-surface: #272727;
+    --dd-raised: #303030;
+    --dd-hover: #3b3b3b;
+    --dd-selected: #474747;
+    --dd-border: #484848;
+    --dd-text: #e3e3e3;
+    --dd-muted: #b3b3b3;
+    /* Shared Material 3 tokens used by newer Google panels and dialogs. */
+    --gm3-sys-color-background: #202020;
+    --gm3-sys-color-on-background: #e3e3e3;
+    --gm3-sys-color-surface: #272727;
+    --gm3-sys-color-surface-dim: #202020;
+    --gm3-sys-color-surface-bright: #3b3b3b;
+    --gm3-sys-color-surface-container-lowest: #202020;
+    --gm3-sys-color-surface-container-low: #272727;
+    --gm3-sys-color-surface-container: #303030;
+    --gm3-sys-color-surface-container-high: #363636;
+    --gm3-sys-color-surface-container-highest: #414141;
+    --gm3-sys-color-on-surface: #e3e3e3;
+    --gm3-sys-color-on-surface-variant: #b3b3b3;
+    --gm3-sys-color-outline: #777777;
+    --gm3-sys-color-outline-variant: #484848;
+    --gm3-sys-color-secondary-container: #414141;
+    --gm3-sys-color-on-secondary-container: #f0f0f0;
+    --gm3-sys-color-primary: #dedede;
+    --gm3-sys-color-on-primary: #242424;
+    --gm3-button-filled-container-color: #dedede;
+    --gm3-button-filled-label-text-color: #242424;
+    --gm3-button-filled-hover-label-text-color: #242424;
+    --gm3-button-filled-tonal-container-color: #474747;
+    --gm3-button-filled-tonal-label-text-color: #f0f0f0;
+    --gm3-button-filled-tonal-hover-label-text-color: #f0f0f0;
+    --gm3-radio-selected-icon-color: #dedede;
+    --gm3-radio-selected-focus-icon-color: #dedede;
+    --gm3-radio-selected-hover-icon-color: #f0f0f0;
+
+    body, #docs-chrome, #docs-header, .docs-titlebar,
+    .docs-titlebar-buttons, #docs-editor-container,
+    .docs-material, .docs-gm, .docs-grille-gm3,
+    .kix-appview-editor, .kix-appview-editor-container,
+    .kix-appview-editor-container > div, .kix-paginateddocumentplugin,
+    .docs-horizontal-ruler, .docs-ruler-background, .docs-ruler-mask,
+    .docs-full-height-sidebar-placeholder, .docs-companion-app-switcher-container {
+      background-color: var(--dd-workspace) !important;
+      color: var(--dd-text) !important;
+    }
+
+    #docs-toolbar-wrapper, #docs-toolbar, .docs-toolbar,
+    .docs-toolbar-mode-switcher, .docs-main-toolbars,
+    .docs-ruler-face, .docs-ruler-face-inner, .docs-ruler-background-inner,
+    .kix-documentmetrics-widget, .navigation-widget,
+    .kix-outlines-widget, .kix-outlines-widget-header-container,
+    .left-sidebar-container, .docs-explore-sidebar,
+    .docs-sidebar, .docs-sidebar-header, .docs-sidebar-content,
+    .docs-comment-pane, .docos-anchoreddocoview,
+    .docos-anchoredreplyview, .docos-replyview, .docos-input,
+    .docos-showrepliesbutton, .docos-comments-pe,
+    [class*="outlines-widget"], [class*="navigation-widget"] {
+      background-color: var(--dd-surface) !important;
+      color: var(--dd-text) !important;
+      border-color: var(--dd-border) !important;
+    }
+
+    .docs-title-input, .docs-title-input-label, .docs-title-input-label-inner,
+    .docs-menubar .menu-button,
+    .goog-menuitem, .goog-menuitem-content, .goog-menuitem-label, .goog-submenu-arrow,
+    .goog-toolbar-button, .goog-toolbar-menu-button,
+    .goog-toolbar-menu-button-caption, .goog-toolbar-combo-button-input,
+    .goog-flat-menu-button-caption, .goog-menubar, .goog-menu-button,
+    .docs-menubar .goog-menuitem, .docs-toolbar-input,
+    .docs-ruler-face-number, .docs-material-gm-labeled-button,
+    .goog-buttonset-default, .jfk-button,
+    [class*="outlines-widget"], [class*="navigation-item"],
+    [class*="docos-"][class*="content"], [class*="docos-"][class*="author"],
+    [class*="docos-"][class*="timestamp"] {
+      color: var(--dd-text) !important;
+    }
+
+    .docs-title-input, .docs-title-input-label, .docs-title-input-label-inner {
+      background: transparent !important;
+      text-shadow: none !important;
+    }
+    /* Docs overlays a transparent input on its title label. Only the visible
+       label should paint text while the field is not being edited. */
+    .docs-title-input:not(:focus) { color: transparent !important; }
+    .docs-title-input:focus { color: var(--dd-text) !important; }
+
+    .docs-title-input:hover, .docs-title-input:focus { border-color: var(--dd-border) !important; }
+    /* Google's title badges overlap the menubar by a few pixels. Keeping the
+       bar transparent lets those icons paint fully over the header surface. */
+    .docs-menubar { background-color: transparent !important; }
+    .goog-toolbar-separator, .docs-toolbar-separator,
+    .goog-menuseparator, .docs-ruler, .docs-ruler-face,
+    .docs-ruler-face-tick-mark, .docs-ruler-face-minor-division,
+    .docs-ruler-face-major-division { border-color: var(--dd-border) !important; }
+
+    .goog-toolbar-button, .goog-toolbar-menu-button, .goog-toolbar-combo-button,
+    .docs-omnibox-input, .docs-toolbar-mode-switcher {
+      background-color: var(--dd-surface) !important;
+      color: var(--dd-text) !important;
+    }
+    .docs-menubar .menu-button:hover, .docs-menubar .menu-button-open {
+      background-color: var(--dd-hover) !important;
+      color: #f0f0f0 !important;
+    }
+
+    /* Popovers are appended to the body, outside the editor's toolbar. */
+    .goog-menu, .goog-menu-vertical, .goog-toolbar-menu-button-open,
+    .goog-menu-button-open, .goog-palette, .goog-color-menu-button,
+    .modal-dialog, .modal-dialog-title, .modal-dialog-content, .modal-dialog-buttons,
+    .docs-material-dialog, .docs-material-dialog-content,
+    .docs-link-bubble, .docs-bubble, .docs-findandreplacedialog,
+    .docs-searchbar, .docs-searchbar-input, .docs-findinput-container,
+    .docs-instant-bubble, .docs-autocomplete, .docs-autocomplete-list,
+    .docs-emoji-picker, .docs-material-colorpalette,
+    .docos-anchoreddocoview .docos-docoview-body,
+    [role="dialog"], [role="listbox"] {
+      background-color: var(--dd-raised) !important;
+      color: var(--dd-text) !important;
+      border-color: var(--dd-border) !important;
+    }
+    .goog-menu, .modal-dialog, .docs-link-bubble, .docs-bubble {
+      box-shadow: 0 8px 28px #0005, 0 0 0 1px #ffffff0a !important;
+    }
+    /* Tooltips have their own light Material surface and explicit text colors. */
+    .jfk-tooltip, [role="tooltip"], .docs-chat-message-tooltip-container {
+      background: var(--dd-hover) !important;
+      color: #f0f0f0 !important;
+      border-color: #606060 !important;
+      text-shadow: none !important;
+      box-shadow: 0 3px 12px #0005 !important;
+    }
+    .jfk-tooltip-content, .jfk-tooltip-content *,
+    .scb-tooltip-text, .scb-tooltip-title, .scb-tooltip-shortcut,
+    .docs-chat-message-tooltip-content, [role="tooltip"] [class*="tooltip"] {
+      color: #f0f0f0 !important;
+      text-shadow: none !important;
+    }
+    .jfk-tooltip-arrowdown { border-top-color: var(--dd-hover) !important; }
+    .jfk-tooltip-arrowup { border-bottom-color: var(--dd-hover) !important; }
+    .jfk-tooltip-arrowleft { border-right-color: var(--dd-hover) !important; }
+    .jfk-tooltip-arrowright { border-left-color: var(--dd-hover) !important; }
+    .docs-bubble a, .docs-bubble-link,
+    .docs-linkbubble-link-preview .docs-link-bubble-text-card-component span {
+      color: var(--dd-text) !important;
+    }
+    .goog-menuitem-accel, .goog-menuitem-mnemonic-hint,
+    .docs-dialog-subtitle, .docs-label, .docs-material-dialog label,
+    .modal-dialog label, .modal-dialog p { color: var(--dd-muted) !important; }
+
+    .goog-menuitem-highlight, .goog-menuitem-hover,
+    .goog-toolbar-button-hover, .goog-toolbar-menu-button-hover,
+    .goog-toolbar-button:hover, .goog-toolbar-menu-button:hover,
+    .docs-menubar .goog-menuitem:hover, .goog-flat-menu-button-hover,
+    .jfk-button:hover, [class*="navigation-item"]:hover {
+      background-color: var(--dd-hover) !important;
+      color: #f0f0f0 !important;
+      border-color: transparent !important;
+    }
+    .goog-toolbar-button-checked, .goog-toolbar-button-active,
+    .goog-toolbar-menu-button-active, .goog-menuitem-selected,
+    [class*="navigation-item"][aria-selected="true"] {
+      background-color: var(--dd-selected) !important;
+      border-color: #757575 !important;
+    }
+    .goog-menuitem-disabled, .goog-menuitem-disabled .goog-menuitem-content,
+    .goog-menuitem-disabled .goog-menuitem-label,
+    .goog-toolbar-button-disabled, .goog-toolbar-menu-button-disabled {
+      color: #898989 !important;
+    }
+
+    .docs-toolbar input, .goog-menu input, .modal-dialog input:not([type="color"]),
+    .modal-dialog textarea, .docs-sidebar input, .docos-input textarea,
+    .docs-findinput-input, .docs-searchbar input {
+      background-color: #242424 !important;
+      color: var(--dd-text) !important;
+      border-color: #606060 !important;
+      caret-color: #eee !important;
+    }
+    .jfk-button, .goog-flat-menu-button { background-color: var(--dd-raised) !important; border-color: var(--dd-border) !important; }
+
+    /* Google's monochrome sprite icons need a separate treatment from images. */
+    .docs-icon-img, .goog-menuitem-checkbox,
+    .goog-toolbar-menu-button-dropdown, .goog-flat-menu-button-dropdown,
+    .docs-material .goog-toolbar-menu-button-dropdown,
+    .docs-ruler-tabstop, .modal-dialog-title-close {
+      filter: grayscale(1) invert(.88) !important;
+    }
+    .docs-icon-color-text, .docs-icon-color-highlight { filter: none !important; }
+    /* Google also reuses surface tokens inside the actual color spectrum.
+       Restore its mathematical white/black endpoints, independent of UI theme. */
+    .docs-material-color-picker-saturation-overlay {
+      background-image: linear-gradient(to right, #fff, transparent) !important;
+    }
+    .docs-material-color-picker-value-overlay {
+      background-image: linear-gradient(to bottom, transparent, #000) !important;
+    }
+    .goog-menuitem-checkbox { filter: brightness(0) invert(.85) !important; }
+    input::selection, textarea::selection {
+      background-color: #606060 !important;
+      color: #fff !important;
+    }
+
+    /* Canvas rendering is isolated to the page, never the whole application.
+       Black text becomes #e0e0e0, white paper #2d2d2d. Color hues stay recognizable,
+       but aren't color-accurate; the popup's original-page option removes this. */
+    &[data-dark-docs-paper="dark"] .kix-page,
+    &[data-dark-docs-paper="dark"] .kix-page-paginated {
+      filter: invert(1) hue-rotate(180deg) contrast(.7) brightness(1.1) !important;
+    }
+    &[data-dark-docs-paper="dark"] .kix-cursor-caret { border-color: #ededed !important; }
+
+    /* Document tabs and outline use their own component system. */
+    .chapter-item-label-and-buttons-container {
+      background-color: transparent !important;
+      color: var(--dd-muted) !important;
+    }
+    .chapter-item-label-and-buttons-container:hover {
+      background-color: var(--dd-hover) !important;
+    }
+    .chapter-item-label-and-buttons-container.chapter-item-label-and-buttons-container-selected {
+      background-color: var(--dd-selected) !important;
+      color: #f0f0f0 !important;
+    }
+    .chapter-label-content, .chapter-label-container input {
+      color: inherit !important;
+      text-shadow: none !important;
+    }
+    .chapter-label-container input {
+      background-color: transparent !important;
+      caret-color: var(--dd-text) !important;
+    }
+    .navigation-item.location-indicator-highlight {
+      color: #f0f0f0 !important;
+      border-color: #b3b3b3 !important;
+    }
+
+    /* The comments activity sidebar is separate from anchored comment cards. */
+    .docs-docos-activity-sidebar,
+    .docs-docos-activity-sidebar-header,
+    .docos-streampane-header,
+    .docos-streampane-zero-state,
+    .docos-streampane-all-filtered-out-state,
+    .docos-streampane-searchbar-container {
+      background-color: var(--dd-surface) !important;
+      color: var(--dd-text) !important;
+      border-color: var(--dd-border) !important;
+    }
+    .docs-docos-activity-sidebar-header-title,
+    .docos-streampane-zero-state-content-add-comment,
+    .docos-streampane-zero-state-footer-edu,
+    .docos-streampane-zero-state-footer-edu-explained,
+    .docos-streampane-all-filtered-out-message {
+      color: var(--dd-text) !important;
+    }
+    .docos-streamdocoview {
+      background-color: var(--dd-raised) !important;
+      color: var(--dd-text) !important;
+      border-color: var(--dd-border) !important;
+    }
+
+    .docos-streampane-tabbar .docs-tabbar-tab {
+      background: transparent !important;
+      color: var(--dd-muted) !important;
+    }
+    .docos-streampane-tabbar .docs-tabbar-tab .docs-tabbar-tablabel {
+      color: inherit !important;
+    }
+    .docos-streampane-tabbar .docs-tabbar-tab.docs-tabbar-tab-selected {
+      background-color: var(--dd-hover) !important;
+      color: #f0f0f0 !important;
+      border-color: #b3b3b3 !important;
+    }
+    .docos-streampane-search-input,
+    .docos-streamdocoview-input-pane .docos-input-textarea,
+    .docos-input-contenteditable {
+      background-color: #242424 !important;
+      color: var(--dd-text) !important;
+      caret-color: #eee !important;
+      border-color: #606060 !important;
+    }
+    .docos-streamdocoview-body, .docos-streamreplyview-body,
+    .docos-streamdocoview-author, .docos-author {
+      color: var(--dd-text) !important;
+    }
+    .docos-streamdocoview-timestamp, .docos-action-text,
+    .docos-input-contenteditable:empty::before {
+      color: var(--dd-muted) !important;
+    }
+    .docos-comments-pe a, .docos-comments-pe a:visited {
+      color: #d0d0d0 !important;
+      text-decoration-color: #999 !important;
+    }
+
+    /* Newer Material dialogs, fields, and sidebars. These rules target UI
+       components, never document text or color-palette swatches. */
+    .docs-material-gm-dialog, .docs-material-gm-dialog-content,
+    .docs-material-bubble, .docs-linkbubble-bubble, .docs-multi-linkbubble-bubble,
+    .docs-tiled-sidebar, .docs-tiled-sidebar-header, .docs-sidebar-tile,
+    .docs-contentembedding-sidebar, .kix-citations-sidebar,
+    .kix-linenumbers-sidebar, .kix-watermark-sidebar,
+    .docs-revisions-sidebar, .docs-revisions-sidebar-header,
+    .docs-chat-title-bar, .docs-chat-messages,
+    [class*="javascriptMaterialdesignGm3WizDialog-dialog__surface"],
+    [class*="javascriptMaterialdesignGm3WizMenuSurface-menu-surface"],
+    [class*="javascriptMaterialdesignGm3WizTextFieldFilled-text-field"] {
+      background-color: var(--dd-raised) !important;
+      color: var(--dd-text) !important;
+      border-color: var(--dd-border) !important;
+    }
+    .docs-material-gm-dialog-title-text, .docs-material-gm-dialog-content,
+    .docs-material-gm-select-caption, .docs-material-gm-labeled-checkbox-label,
+    .docs-sidebar-tile-header, .docs-sidebar-tile-label, .docs-sidebar-tile-section-title,
+    .appsDocsUiSidebarHeading, .docs-findinput-count,
+    .docs-fonts-section-header, .goog-menuheader,
+    [class*="javascriptMaterialdesignGm3WizDialog-dialog__title"],
+    [class*="javascriptMaterialdesignGm3WizDialog-dialog__content"],
+    [class*="javascriptMaterialdesignGm3WizList-list-item__primary-text"],
+    [class*="javascriptMaterialdesignGm3WizTabsPrimary-tab__text-label"],
+    [class*="javascriptMaterialdesignGm3WizSelect"][class*="__selected-text"] {
+      color: var(--dd-text) !important;
+    }
+    .docs-material-gm-dialog input:not([type="color"]),
+    .docs-material-gm-dialog textarea, .docs-material-bubble input,
+    .docs-chat-edit-box,
+    [class*="javascriptMaterialdesignGm3WizTextField"][class*="__input"] {
+      background-color: #242424 !important;
+      color: var(--dd-text) !important;
+      caret-color: #eee !important;
+      border-color: #606060 !important;
+    }
+    .docs-revisions-tile-selected {
+      background-color: var(--dd-selected) !important;
+    }
+    .docs-revisions-tile-text-box, .docs-revisions-tile-descriptor,
+    .docs-revisions-sidebar-date-group, .docs-revisions-tile-collaborator-name {
+      color: var(--dd-text) !important;
+    }
+    .miniChapterSwitcherContainer, .nextChapterBottomFabView,
+    .docs-companion-app-switcher-collapse-button {
+      background-color: var(--dd-raised) !important;
+      color: var(--dd-text) !important;
+    }
+
+    .docs-material-button-fill-primary, .docs-gm3-filled-button,
+    .docos-comments-pe .jfk-button-action {
+      background-color: #dedede !important;
+      color: #242424 !important;
+      border-color: #dedede !important;
+    }
+    .docs-material-button-fill-primary .docs-material-button-content,
+    .docs-gm3-filled-button .docs-material-button-content {
+      color: #242424 !important;
+    }
+    .docs-material-button-fill-primary:not(.docs-material-button-disabled):hover,
+    .docs-gm3-filled-button:not(.docs-gm3-button-disabled):hover {
+      background-color: #f0f0f0 !important;
+    }
+    .docs-material-button-fill-primary .docs-icon-img,
+    .docs-gm3-filled-button .docs-icon-img {
+      filter: grayscale(1) brightness(0) !important;
+    }
+    .docs-gm3-text-button, .docs-material-button-text-default,
+    .docs-material-button-flat-primary, .docs-material-button-hairline-primary,
+    .modal-dialog button,
+    [class*="javascriptMaterialdesignGm3WizButtonText-button__label"],
+    [class*="javascriptMaterialdesignGm3WizButtonOutlined-button__label"] {
+      color: var(--dd-text) !important;
+    }
+    .modal-dialog .goog-buttonset-action, .modal-dialog .jfk-button-action,
+    .modal-dialog button[name="ok"], .modal-dialog button.goog-buttonset-default {
+      background: #dedede !important;
+      color: #242424 !important;
+      border-color: #dedede !important;
+    }
+    [role="dialog"] button:disabled,
+    [role="dialog"] button:disabled [class*="button__label"],
+    .docs-material-button-disabled .docs-material-button-content {
+      color: #898989 !important;
+    }
+    [role="dialog"] button:disabled[class*="ButtonFilled-button"] {
+      background-color: var(--dd-hover) !important;
+    }
+    [role="dialog"] [role="separator"] { border-color: var(--dd-border) !important; }
+    .docsSidekickSideSheetRoot { border-color: var(--dd-border) !important; }
+    .appsDocsRevisionsWizSidebarRevisionTitleTextboxContainer input,
+    .appsDocsRevisionsWizSidebarRevisionTitleTextboxContainer textarea {
+      background-color: transparent !important;
+    }
+
+    /* Companion apps are cross-origin frames. A display-only transform keeps
+       their light interfaces comfortable without requesting access to them. */
+    iframe.companion-shell-iframe {
+      filter: invert(1) hue-rotate(180deg) contrast(.72) brightness(1.1) !important;
+    }
+
+    /* Native scrollbars, including those inside menus and side panels. */
+    * { scrollbar-color: #606060 var(--dd-workspace); }
+    ::-webkit-scrollbar { background: var(--dd-workspace); }
+    ::-webkit-scrollbar-thumb { background: #606060; border: 3px solid var(--dd-workspace); border-radius: 9px; }
+    ::-webkit-scrollbar-corner { background: var(--dd-workspace); }
+  }
+}

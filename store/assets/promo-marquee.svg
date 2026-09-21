@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" role="img" aria-labelledby="title desc">
+  <title id="title">Dark Docs — A calmer place to write</title>
+  <desc id="desc">An original charcoal promotional composition with a crescent moon and an abstract document. Automatic dark mode in thoughtful shades of gray.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="560" x2="1400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#222222"/>
+      <stop offset="1" stop-color="#383838"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="936" y1="91" x2="1210" y2="442" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#424242"/>
+      <stop offset="1" stop-color="#303030"/>
+    </linearGradient>
+    <filter id="shadow" x="-60%" y="-40%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#171717" flood-opacity="0.45"/>
+    </filter>
+    <mask id="moon">
+      <rect width="1400" height="560" fill="#000"/>
+      <circle cx="1072" cy="208" r="58" fill="#fff"/>
+      <circle cx="1100" cy="184" r="53" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="1400" height="560" fill="url(#background)"/>
+  <circle cx="1202" cy="95" r="435" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+  <circle cx="1202" cy="95" r="363" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+  <circle cx="1202" cy="95" r="292" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+  <g transform="rotate(-8 1070 270)">
+    <rect x="930" y="77" width="268" height="365" rx="29" fill="#2c2c2c" stroke="#4c4c4c" stroke-width="2"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="945" y="94" width="266" height="368" rx="29" fill="url(#paper)" stroke="#555555" stroke-width="2"/>
+    <rect width="1400" height="560" fill="#e3e3e3" mask="url(#moon)"/>
+    <path d="M992 319h143M992 347h170M992 375h117" fill="none" stroke="#8c8c8c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M992 421h55" fill="none" stroke="#5e5e5e" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="84" y="229" fill="#f1f1f1" font-size="88" font-weight="600" letter-spacing="-3.5">Dark Docs</text>
+    <text x="89" y="286" fill="#bdbdbd" font-size="30">A calmer place to write.</text>
+    <path d="M91 342h54" stroke="#797979" stroke-width="3" stroke-linecap="round"/>
+    <text x="89" y="395" fill="#d0d0d0" font-size="21">Automatic dark mode.</text>
+    <text x="89" y="427" fill="#a9a9a9" font-size="21">Thoughtful shades of gray.</text>
+  </g>
+</svg>

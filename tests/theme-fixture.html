@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-dark-docs="dark" data-dark-docs-paper="dark">
+<meta charset="utf-8"><title>Dark Docs · Theme checks</title>
+<style>
+body { font:14px Arial; background:#fff; color:#111; margin:24px; }
+.docs-title-input-label{color:#111;font-size:18px}.docs-title-input{position:absolute;color:transparent;text-shadow:0 0 #111; background:transparent;border:0;font:18px Arial}
+.menu-button{color:#111}.goog-toolbar-button{background:#f0f4f9;color:#222;padding:8px}.goog-menu{background:#fff;padding:14px}.goog-menuitem-content{color:#111;padding:8px}.goog-menuitem-accel{color:#777}.kix-page{background:#fff;color:#000;padding:30px;margin:20px 0}.modal-dialog{background:#fff;padding:15px}.goog-menuitem-highlight{background:#eee}.goog-submenu-arrow{float:right}.docs-menubar{padding:12px 0}.docs-titlebar{position:relative}.goog-toolbar{display:flex;gap:4px;padding:8px}.result{white-space:pre-wrap;font:13px/1.8 monospace;margin-top:20px}
+
+.docs-docos-activity-sidebar-header,.docos-streampane-zero-state{background:#f0f4f9;color:#111;padding:20px}.docos-streampane-tabbar .docs-tabbar-tab{display:inline-block;padding:8px;color:#111;background:#d3e3fd}.chapter-item-label-and-buttons-container-selected{background:#d3e3fd;color:#0b57d0;padding:12px}.docs-material-button-fill-primary{background:#0b57d0;color:white;padding:10px;border:0}
+.jfk-tooltip,.docs-chat-message-tooltip-container{display:inline-block;background:#fff;color:#202124;border:1px solid #dadce0;border-radius:4px;padding:10px;margin:12px 12px 0 0}.scb-tooltip-title{color:#202124;font-weight:bold}.scb-tooltip-text,.docs-chat-message-tooltip-content{color:#5f6368}.docs-linkbubble-bubble{background:#fff;color:#202124;padding:14px;margin-top:12px}.docs-link-bubble-text-card-component span{color:#202124}.docs-bubble-link{color:#1a73e8}
+</style>
+<link rel="stylesheet" href="../extension/theme.css">
+<body>
+<div class="docs-titlebar"><span class="docs-title-input-label">A quieter place to write</span><input class="docs-title-input" aria-label="Rename" value="A quieter place to write" style="left:0;top:0"></div>
+<div class="docs-menubar"><span class="menu-button">File</span> &nbsp; <span class="menu-button">Edit</span> &nbsp; <span class="menu-button">View</span></div>
+<div id="docs-toolbar" class="goog-toolbar"><div class="goog-toolbar-button">Undo</div><div class="goog-toolbar-button goog-toolbar-button-checked">B</div></div>
+<div class="kix-page">Document paper and text</div>
+<div class="goog-menu"><div class="goog-menuitem-content">New <span class="goog-submenu-arrow">›</span></div><div class="goog-menuitem-content goog-menuitem-highlight">Open <span class="goog-menuitem-accel">⌘O</span></div></div>
+<div class="chapter-item-label-and-buttons-container chapter-item-label-and-buttons-container-selected"><span class="chapter-label-content">Tab 1</span></div>
+<section class="docos-comments-pe docs-docos-activity-sidebar"><header class="docs-docos-activity-sidebar-header"><span class="docs-docos-activity-sidebar-header-title">Comments</span><div class="docos-streampane-tabbar"><div class="docs-tabbar-tab docs-tabbar-tab-selected"><span class="docs-tabbar-tablabel">All comments</span></div><div class="docs-tabbar-tab"><span class="docs-tabbar-tablabel">For you</span></div></div></header><div class="docos-streampane-zero-state"><p class="docos-streampane-zero-state-content-add-comment">Start a discussion</p><button class="docs-material-button-fill-primary">Add comment</button><p class="docos-streampane-zero-state-footer-edu">Who sees comments?</p></div></section>
+<!-- Representative selector fixtures, not a captured Google Docs DOM. -->
+<div id="toolbar-tooltip" class="jfk-tooltip" role="tooltip">Undo (⌘Z)</div>
+<div id="share-tooltip" class="jfk-tooltip" role="tooltip"><div class="scb-tooltip-title">Share this document</div><div class="scb-tooltip-text">Only people with access can open it.</div></div>
+<div class="docs-chat-message-tooltip-container" role="tooltip"><span class="docs-chat-message-tooltip-content">Message sent at 9:41</span></div>
+<div class="jfk-bubble docs-linkbubble-bubble"><div class="docs-linkbubble-link-preview"><div class="docs-link-bubble-text-card-component"><span>Linked document title</span></div></div><a class="docs-bubble-link" href="#results">Open linked document</a></div>
+<div id="results" class="result" role="status"></div>
+<script src="theme-fixture.js"></script>
+</body></html>
