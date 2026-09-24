@@ -2,7 +2,15 @@
 
 A small Chrome extension that gives Google Docs a neutral charcoal theme and follows your computer's appearance automatically. No build step, dependencies, account, analytics, or network requests.
 
+![Dark Docs showing Google Docs with a charcoal interface and dark document pages](store/assets/screenshot-dark.png)
+
 ## Install
+
+Install [Dark Docs from the Chrome Web Store](https://chromewebstore.google.com/detail/dark-docs/lddfoalljgifdgnoomiokmpgdnmejoml) and click **Add to Chrome**. Reload any open Google Docs tabs, then pin **Dark Docs** from Chrome's Extensions menu if you'd like quick access to its controls.
+
+### Manual installation
+
+To try the extension directly from this repository:
 
 1. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
 2. Choose **Load unpacked** and select the `extension` folder in this project.
@@ -41,7 +49,5 @@ The extension uses modern CSS nesting and targets Chrome 120 or later.
 - [Public privacy policy](https://github.com/grinich/dark-docs/blob/main/PRIVACY.md), readable without signing in.
 - [Development handoff](DEVELOPMENT.md): local setup, remaining QA, and release steps.
 - [Verification record](TESTING.md): checks completed and their limits.
-
-Version 1.2.1 is a submission candidate, not a published Chrome Web Store release. The existing draft store item is `lddfoalljgifdgnoomiokmpgdnmejoml`. The package, public privacy-policy URL, and a clean light-appearance comparison screenshot are ready; the primary dark screenshot and remaining live checks are still pending.
 
 Run `npm run submission` to build both the extension ZIP and a separate submission-kit ZIP containing the guide, privacy policy, and promotional artwork. Upload only the extension ZIP to the store.
